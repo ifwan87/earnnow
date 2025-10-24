@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <link href="/css/output.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body class="font-sans antialiased">
+  
+  <!-- Navigation -->
+  <nav class="fixed w-full bg-earnnow-black/95 backdrop-blur-sm border-b border-gray-800 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center">
+          <a href="/" class="text-2xl font-bold gradient-text">EarnNow</a>
+        </div>
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="/merchants" class="text-gray-300 hover:text-earnnow-yellow transition">Merchants</a>
+          <a href="/how-it-works" class="text-gray-300 hover:text-earnnow-yellow transition">How It Works</a>
+          <a href="/tiers" class="text-gray-300 hover:text-earnnow-yellow transition">Tiers</a>
+          <a href="/rewards" class="text-gray-300 hover:text-earnnow-yellow transition">Rewards</a>
+        </div>
+        <div class="flex items-center space-x-4">
+          <button class="btn-secondary text-sm">Sign In</button>
+          <button class="btn-primary text-sm">Get Started</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="pt-32 pb-20 px-4 relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-earnnow-yellow/10 via-transparent to-transparent"></div>
+    <div class="max-w-7xl mx-auto relative z-10">
+      <div class="text-center mb-12">
+        <div class="inline-block bg-earnnow-yellow/10 border border-earnnow-yellow/30 rounded-full px-4 py-2 mb-6">
+          <span class="text-earnnow-yellow text-sm font-semibold">Shop and earn real cashback first, crypto when you're ready</span>
+        </div>
+        <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+          Shop. <span class="gradient-text">Earn.</span> Grow.
+        </h1>
+        <p class="text-xl text-gray-400 mb-8 max-w-3xl mx-auto">
+          Turn every purchase into rewards. Get real cashback instantly—no wallet needed. 
+          Explore crypto bonuses later when you're ready.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+          <button class="btn-primary text-lg">Start Earning Now</button>
+          <button class="btn-secondary text-lg">See How It Works</button>
+        </div>
+      </div>
+
+      <!-- Today's Top Deals Card -->
+      <div class="max-w-5xl mx-auto">
+        <div class="bg-white rounded-3xl shadow-2xl p-8 md:p-12 relative overflow-hidden">
+          <!-- Decorative blob -->
+          <div class="absolute -top-10 -right-10 w-40 h-40 bg-earnnow-yellow/20 rounded-full blur-3xl"></div>
+          <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-earnnow-yellow/10 rounded-full blur-3xl"></div>
+          
+          <div class="relative z-10">
+            <div class="text-center mb-8">
+              <div class="text-earnnow-black font-bold text-2xl mb-2">EarnNow</div>
+              <h2 class="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-600 mb-2">
+                Today's Top Deals
+              </h2>
+              <div class="h-1 w-20 bg-gradient-to-r from-earnnow-yellow to-green-400 mx-auto rounded-full"></div>
+            </div>
+
+            <!-- Deals Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              <!-- Deal Card 1 -->
+              <div class="bg-gray-50 rounded-2xl p-5 hover:shadow-lg transition-all duration-300 group cursor-pointer">
+                <div class="bg-white rounded-xl p-4 mb-4 flex items-center justify-center h-40">
+                  <div class="text-6xl">👜</div>
+                </div>
+                <div class="text-center">
+                  <div class="text-earnnow-black font-semibold mb-1">Up to 50% Off</div>
+                  <div class="text-xs text-gray-500 mb-3">Fashion & Accessories<br/>Shopee Exclusive</div>
+                  <div class="text-green-600 font-bold text-2xl mb-3">₹1,299</div>
+                  <button class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2.5 rounded-lg transition-all duration-300 group-hover:scale-105">
+                    Shop Now
+                  </button>
+                </div>
+              </div>
+
+              <!-- Deal Card 2 -->
+              <div class="bg-gray-50 rounded-2xl p-5 hover:shadow-lg transition-all duration-300 group cursor-pointer">
+                <div class="bg-white rounded-xl p-4 mb-4 flex items-center justify-center h-40">
+                  <div class="text-6xl">👟</div>
+                </div>
+                <div class="text-center">
+                  <div class="text-earnnow-black font-semibold mb-1">Up to 50% Off</div>
+                  <div class="text-xs text-gray-500 mb-3">Sports & Footwear<br/>Lazada Flash Sale</div>
+                  <div class="text-green-600 font-bold text-2xl mb-3">₹1,299</div>
+                  <button class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2.5 rounded-lg transition-all duration-300 group-hover:scale-105">
+                    Shop Now
+                  </button>
+                </div>
+              </div>
+
+              <!-- Deal Card 3 -->
+              <div class="bg-gray-50 rounded-2xl p-5 hover:shadow-lg transition-all duration-300 group cursor-pointer">
+                <div class="bg-white rounded-xl p-4 mb-4 flex items-center justify-center h-40">
+                  <div class="text-6xl">🧥</div>
+                </div>
+                <div class="text-center">
+                  <div class="text-earnnow-black font-semibold mb-1">Up to 50% Off</div>
+                  <div class="text-xs text-gray-500 mb-3">Winter Collection<br/>Fashion Deals</div>
+                  <div class="text-green-600 font-bold text-2xl mb-3">₹1,299</div>
+                  <button class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2.5 rounded-lg transition-all duration-300 group-hover:scale-105">
+                    Shop Now
+                  </button>
+                </div>
+              </div>
+
+              <!-- Deal Card 4 -->
+              <div class="bg-gray-50 rounded-2xl p-5 hover:shadow-lg transition-all duration-300 group cursor-pointer">
+                <div class="bg-white rounded-xl p-4 mb-4 flex items-center justify-center h-40">
+                  <div class="text-6xl">👔</div>
+                </div>
+                <div class="text-center">
+                  <div class="text-earnnow-black font-semibold mb-1">Up to 50% Off</div>
+                  <div class="text-xs text-gray-500 mb-3">Premium Apparel<br/>Limited Time Offer</div>
+                  <div class="text-green-600 font-bold text-2xl mb-3">₹1,299</div>
+                  <button class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2.5 rounded-lg transition-all duration-300 group-hover:scale-105">
+                    Shop Now
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Stats below deals -->
+            <div class="mt-10 pt-8 border-t border-gray-200 grid grid-cols-3 gap-6 text-center">
+              <div>
+                <div class="text-3xl font-bold text-earnnow-black mb-1">100K+</div>
+                <div class="text-sm text-gray-600">Active Users</div>
+              </div>
+              <div>
+                <div class="text-3xl font-bold text-earnnow-black mb-1">RM 25M</div>
+                <div class="text-sm text-gray-600">Cashback Paid</div>
+              </div>
+              <div>
+                <div class="text-3xl font-bold text-earnnow-black mb-1">150+</div>
+                <div class="text-sm text-gray-600">Merchants</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="py-20 px-4 bg-earnnow-gray/30">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="section-title">Simple as <span class="gradient-text">1-2-3</span></h2>
+        <p class="text-xl text-gray-400">Start earning in under 60 seconds</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="card text-center">
+          <div class="w-16 h-16 bg-earnnow-yellow/10 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-3xl font-bold text-earnnow-yellow">1</span>
+          </div>
+          <h3 class="text-2xl font-bold mb-3">Sign Up</h3>
+          <p class="text-gray-400">Quick email or Google sign-up. No wallet, no crypto steps. Takes 10 seconds.</p>
+        </div>
+        <div class="card text-center">
+          <div class="w-16 h-16 bg-earnnow-yellow/10 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-3xl font-bold text-earnnow-yellow">2</span>
+          </div>
+          <h3 class="text-2xl font-bold mb-3">Shop</h3>
+          <p class="text-gray-400">Click your favorite store, shop like normal. We track it automatically.</p>
+        </div>
+        <div class="card text-center">
+          <div class="w-16 h-16 bg-earnnow-yellow/10 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-3xl font-bold text-earnnow-yellow">3</span>
+          </div>
+          <h3 class="text-2xl font-bold mb-3">Earn</h3>
+          <p class="text-gray-400">See cashback appear as "Pending" within 24h. Get approved after refund window.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Merchants -->
+  <section class="py-20 px-4">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="section-title">Shop at Your <span class="gradient-text">Favorite Stores</span></h2>
+        <p class="text-xl text-gray-400">Earn cashback from 150+ trusted merchants</p>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div class="card text-center group cursor-pointer">
+          <div class="text-4xl mb-3">🛍️</div>
+          <h4 class="font-semibold mb-2 group-hover:text-earnnow-yellow transition">Shopee</h4>
+          <p class="text-earnnow-yellow text-sm">Up to 5% cashback</p>
+        </div>
+        <div class="card text-center group cursor-pointer">
+          <div class="text-4xl mb-3">🛒</div>
+          <h4 class="font-semibold mb-2 group-hover:text-earnnow-yellow transition">Lazada</h4>
+          <p class="text-earnnow-yellow text-sm">Up to 4.5% cashback</p>
+        </div>
+        <div class="card text-center group cursor-pointer">
+          <div class="text-4xl mb-3">✈️</div>
+          <h4 class="font-semibold mb-2 group-hover:text-earnnow-yellow transition">Agoda</h4>
+          <p class="text-earnnow-yellow text-sm">Up to 6% cashback</p>
+        </div>
+        <div class="card text-center group cursor-pointer">
+          <div class="text-4xl mb-3">🏨</div>
+          <h4 class="font-semibold mb-2 group-hover:text-earnnow-yellow transition">Booking.com</h4>
+          <p class="text-earnnow-yellow text-sm">Up to 5.5% cashback</p>
+        </div>
+      </div>
+      <div class="text-center mt-8">
+        <a href="/merchants" class="btn-secondary">View All Merchants</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tiers Section -->
+  <section class="py-20 px-4 bg-earnnow-gray/30">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="section-title">Grow Your <span class="gradient-text">Rewards</span></h2>
+        <p class="text-xl text-gray-400">Higher tiers unlock better cashback rates</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="card border-2 border-gray-700">
+          <div class="text-center mb-4">
+            <div class="text-4xl mb-2">⭐</div>
+            <h3 class="text-2xl font-bold">Starter</h3>
+          </div>
+          <div class="space-y-3 mb-6">
+            <div class="flex items-center justify-between">
+              <span class="text-gray-400">Cashback Rate</span>
+              <span class="font-semibold">1.0x</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-gray-400">Required Earnings</span>
+              <span class="font-semibold">RM 0</span>
+            </div>
+          </div>
+          <ul class="space-y-2 text-sm text-gray-400">
+            <li>✓ Base cashback rewards</li>
+            <li>✓ Referral program access</li>
+            <li>✓ Clear pending/approved tracking</li>
+          </ul>
+        </div>
+        <div class="card border-2 border-earnnow-yellow transform md:scale-105">
+          <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-earnnow-yellow text-earnnow-black px-4 py-1 rounded-full text-sm font-semibold">
+            Popular
+          </div>
+          <div class="text-center mb-4">
+            <div class="text-4xl mb-2">💎</div>
+            <h3 class="text-2xl font-bold text-earnnow-yellow">Silver</h3>
+          </div>
+          <div class="space-y-3 mb-6">
+            <div class="flex items-center justify-between">
+              <span class="text-gray-400">Cashback Rate</span>
+              <span class="font-semibold text-earnnow-yellow">1.1x</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-gray-400">Required Earnings</span>
+              <span class="font-semibold">RM 200</span>
+            </div>
+          </div>
+          <ul class="space-y-2 text-sm text-gray-400">
+            <li>✓ Everything in Starter</li>
+            <li>✓ <span class="text-earnnow-yellow">+10% cashback boost</span></li>
+            <li>✓ Priority support</li>
+            <li>✓ Early access to quests</li>
+          </ul>
+        </div>
+        <div class="card border-2 border-yellow-600">
+          <div class="text-center mb-4">
+            <div class="text-4xl mb-2">👑</div>
+            <h3 class="text-2xl font-bold text-yellow-600">Gold</h3>
+          </div>
+          <div class="space-y-3 mb-6">
+            <div class="flex items-center justify-between">
+              <span class="text-gray-400">Cashback Rate</span>
+              <span class="font-semibold text-yellow-600">1.2x</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-gray-400">Required Earnings</span>
+              <span class="font-semibold">RM 1,000</span>
+            </div>
+          </div>
+          <ul class="space-y-2 text-sm text-gray-400">
+            <li>✓ Everything in Silver</li>
+            <li>✓ <span class="text-yellow-600">+20% cashback boost</span></li>
+            <li>✓ Exclusive NFT boosts (future)</li>
+            <li>✓ Staking rewards (future)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Web3 Optional Section -->
+  <section class="py-20 px-4">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="section-title mb-6">
+            Crypto? <span class="gradient-text">Only When You Want</span>
+          </h2>
+          <p class="text-xl text-gray-400 mb-6">
+            Start with familiar cashback. No wallet needed. When you're curious, 
+            unlock optional Web3 bonuses on Base Chain.
+          </p>
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3">
+              <span class="text-earnnow-yellow text-2xl">✓</span>
+              <div>
+                <h4 class="font-semibold mb-1">Stable Value Option</h4>
+                <p class="text-gray-400 text-sm">Choose USDC for stable rewards without volatility worry</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-earnnow-yellow text-2xl">✓</span>
+              <div>
+                <h4 class="font-semibold mb-1">Low Fees on Base</h4>
+                <p class="text-gray-400 text-sm">Fast, affordable transactions when you're ready to explore</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-earnnow-yellow text-2xl">✓</span>
+              <div>
+                <h4 class="font-semibold mb-1">Future NFT & Staking</h4>
+                <p class="text-gray-400 text-sm">Extra bonuses coming for advanced users</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3 class="text-2xl font-bold mb-4 text-center">Your Journey, Your Pace</h3>
+          <div class="space-y-4">
+            <div class="bg-earnnow-black/50 p-4 rounded-lg border-l-4 border-gray-600">
+              <div class="text-sm text-gray-500 mb-1">Step 1</div>
+              <div class="font-semibold">Sign up & shop (Web2 mode)</div>
+            </div>
+            <div class="bg-earnnow-black/50 p-4 rounded-lg border-l-4 border-earnnow-yellow/50">
+              <div class="text-sm text-gray-500 mb-1">Step 2 (Optional)</div>
+              <div class="font-semibold">Connect wallet for bonuses</div>
+            </div>
+            <div class="bg-earnnow-black/50 p-4 rounded-lg border-l-4 border-earnnow-yellow">
+              <div class="text-sm text-gray-500 mb-1">Step 3 (Optional)</div>
+              <div class="font-semibold">Explore NFTs, staking, token rewards</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 px-4 bg-gradient-to-r from-earnnow-yellow/20 to-yellow-600/20">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-4xl md:text-6xl font-bold mb-6">
+        Ready to Start <span class="gradient-text">Earning?</span>
+      </h2>
+      <p class="text-xl text-gray-300 mb-8">
+        Join thousands of smart shoppers already earning more
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <button class="btn-primary text-lg">Create Free Account</button>
+        <button class="btn-secondary text-lg">Learn More</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-earnnow-gray border-t border-gray-800 py-12 px-4">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid md:grid-cols-4 gap-8 mb-8">
+        <div>
+          <div class="text-2xl font-bold gradient-text mb-4">EarnNow</div>
+          <p class="text-gray-400 text-sm">Shop and earn real cashback first, crypto when you're ready.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Product</h4>
+          <ul class="space-y-2 text-sm text-gray-400">
+            <li><a href="/merchants" class="hover:text-earnnow-yellow transition">Merchants</a></li>
+            <li><a href="/how-it-works" class="hover:text-earnnow-yellow transition">How It Works</a></li>
+            <li><a href="/tiers" class="hover:text-earnnow-yellow transition">Tiers</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Company</h4>
+          <ul class="space-y-2 text-sm text-gray-400">
+            <li><a href="#" class="hover:text-earnnow-yellow transition">About</a></li>
+            <li><a href="#" class="hover:text-earnnow-yellow transition">Blog</a></li>
+            <li><a href="#" class="hover:text-earnnow-yellow transition">Careers</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Support</h4>
+          <ul class="space-y-2 text-sm text-gray-400">
+            <li><a href="#" class="hover:text-earnnow-yellow transition">Help Center</a></li>
+            <li><a href="#" class="hover:text-earnnow-yellow transition">Contact</a></li>
+            <li><a href="#" class="hover:text-earnnow-yellow transition">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 pt-8 text-center text-gray-400 text-sm">
+        <p>&copy; 2025 EarnNow. Built on Base Chain. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>
