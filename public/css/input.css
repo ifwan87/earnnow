@@ -2,11 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  body {
-    @apply bg-earnnow-black text-white;
-  }
-}
+/* Body defaults removed - using inline styles in HTML instead */
 
 @layer components {
   .btn-primary {
