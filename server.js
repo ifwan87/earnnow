@@ -52,6 +52,12 @@ app.get('/tiers', (req, res) => {
   });
 });
 
-app.listen(PORT, () => {
-  console.log(`🚀 EarnNow server running on http://localhost:${PORT}`);
-});
+// Export for Vercel
+module.exports = app;
+
+// Local development server
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`🚀 EarnNow server running on http://localhost:${PORT}`);
+  });
+}
