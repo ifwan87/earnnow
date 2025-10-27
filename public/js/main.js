@@ -1,3 +1,6 @@
+// EarnNow Web App - v1.1 (Latest UI Update)
+// Deployed: October 27, 2025
+
 // Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
