@@ -1,1 +1,302 @@
-<!DOCTYPE html><html><head><title><%= title %></title><link href="/css/output.css" rel="stylesheet"></head><body class="bg-white text-gray-900"><h1 class="text-3xl font-bold">Rewards</h1><p>Placeholder page.</p></body></html>
+<!DOCTYPE html>
+<html lang="en" data-theme="earnnow">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <link href="/css/output.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body class="font-sans antialiased bg-gray-50">
+  
+  <!-- Navigation -->
+  <nav class="bg-white border-b border-gray-200 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="flex justify-between items-center h-16">
+        <a href="/" class="text-2xl font-bold gradient-text">EarnNow</a>
+        
+        <div class="flex items-center gap-6">
+          <a href="/merchants" class="text-gray-700 hover:text-earnnow-yellow transition">Merchants</a>
+          <a href="/dashboard" class="text-gray-700 hover:text-earnnow-yellow transition">Dashboard</a>
+          <a href="/rewards" class="text-earnnow-yellow font-semibold">Rewards</a>
+          <div class="relative group">
+            <button class="flex items-center gap-2 text-gray-700 hover:text-earnnow-yellow transition">
+              <div class="w-8 h-8 bg-earnnow-yellow rounded-full flex items-center justify-center text-earnnow-black font-bold">
+                <%= user.name.charAt(0).toUpperCase() %>
+              </div>
+              <span class="font-medium"><%= user.name %></span>
+            </button>
+            <div class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-xl border border-gray-200 hidden group-hover:block">
+              <a href="/dashboard" class="block px-4 py-2 text-gray-700 hover:bg-gray-50">Dashboard</a>
+              <a href="/rewards" class="block px-4 py-2 text-gray-700 hover:bg-gray-50">Rewards</a>
+              <a href="/logout" class="block px-4 py-2 text-red-600 hover:bg-red-50">Sign Out</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="max-w-7xl mx-auto px-4 py-8">
+    
+    <!-- Header -->
+    <div class="mb-8">
+      <h1 class="text-3xl font-bold text-gray-900 mb-2">Your Rewards 💰</h1>
+      <p class="text-gray-600">Track all your cashback earnings and transactions</p>
+    </div>
+
+    <!-- Summary Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+      <!-- Available Balance -->
+      <div class="bg-white rounded-2xl shadow-md p-6 border-2 border-green-200">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-sm font-semibold text-gray-600 uppercase">Available Balance</h3>
+          <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+            <span class="text-2xl">💵</span>
+          </div>
+        </div>
+        <div class="text-4xl font-bold text-green-600 mb-2">RM <%= user.approvedCashback.toFixed(2) %></div>
+        <p class="text-sm text-gray-500 mb-4">Ready to withdraw</p>
+        <button class="w-full bg-green-600 text-white font-semibold py-2 rounded-lg hover:bg-green-700 transition">
+          Withdraw Now
+        </button>
+      </div>
+
+      <!-- Pending Earnings -->
+      <div class="bg-white rounded-2xl shadow-md p-6 border-2 border-yellow-200">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-sm font-semibold text-gray-600 uppercase">Pending Earnings</h3>
+          <div class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center">
+            <span class="text-2xl">⏳</span>
+          </div>
+        </div>
+        <div class="text-4xl font-bold text-yellow-600 mb-2">RM <%= user.pendingCashback.toFixed(2) %></div>
+        <p class="text-sm text-gray-500 mb-4">Being tracked</p>
+        <div class="text-xs text-gray-400">Usually approved in 30-90 days</div>
+      </div>
+
+      <!-- Total Earned -->
+      <div class="bg-white rounded-2xl shadow-md p-6 border-2 border-purple-200">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-sm font-semibold text-gray-600 uppercase">Total Earned</h3>
+          <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
+            <span class="text-2xl">🏆</span>
+          </div>
+        </div>
+        <div class="text-4xl font-bold text-purple-600 mb-2">RM <%= user.totalEarned.toFixed(2) %></div>
+        <p class="text-sm text-gray-500 mb-4">All-time earnings</p>
+        <div class="flex items-center gap-2 text-sm">
+          <span class="text-purple-600 font-semibold"><%= user.tier %> Tier</span>
+          <span class="text-2xl"><%= user.tier === 'Gold' ? '👑' : user.tier === 'Silver' ? '💎' : '⭐' %></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Filter Tabs -->
+    <div class="bg-white rounded-2xl shadow-md p-6 mb-8">
+      <div class="flex items-center justify-between mb-6">
+        <h2 class="text-xl font-bold text-gray-900">Transaction History</h2>
+        <div class="flex gap-2">
+          <button onclick="filterTransactions('all')" class="filter-btn active px-4 py-2 rounded-lg font-semibold text-sm transition">
+            All
+          </button>
+          <button onclick="filterTransactions('approved')" class="filter-btn px-4 py-2 rounded-lg font-semibold text-sm transition">
+            Approved
+          </button>
+          <button onclick="filterTransactions('pending')" class="filter-btn px-4 py-2 rounded-lg font-semibold text-sm transition">
+            Pending
+          </button>
+        </div>
+      </div>
+
+      <% if (transactions.length === 0) { %>
+        <!-- Empty State -->
+        <div class="text-center py-16">
+          <div class="text-7xl mb-4">📊</div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-2">No transactions yet</h3>
+          <p class="text-gray-600 mb-8 max-w-md mx-auto">
+            Start shopping through EarnNow merchants to earn cashback on your purchases!
+          </p>
+          <div class="flex gap-3 justify-center">
+            <a href="/merchants" class="bg-earnnow-yellow text-earnnow-black font-semibold px-8 py-3 rounded-lg hover:bg-yellow-500 transition transform hover:scale-105">
+              Browse Merchants
+            </a>
+            <a href="/dashboard" class="border-2 border-earnnow-yellow text-earnnow-yellow font-semibold px-8 py-3 rounded-lg hover:bg-earnnow-yellow hover:text-earnnow-black transition">
+              Go to Dashboard
+            </a>
+          </div>
+        </div>
+      <% } else { %>
+        <!-- Transactions List -->
+        <div id="transactionsList" class="space-y-4">
+          <% transactions.reverse().forEach(function(transaction) { %>
+            <div class="transaction-item border-2 border-gray-200 rounded-xl p-4 hover:border-earnnow-yellow transition-all cursor-pointer" data-status="<%= transaction.status %>">
+              <div class="flex items-center justify-between">
+                <!-- Left Side - Merchant Info -->
+                <div class="flex items-center gap-4">
+                  <div class="w-14 h-14 bg-gradient-to-br from-orange-400 to-orange-500 rounded-xl flex items-center justify-center text-2xl">
+                    🏪
+                  </div>
+                  <div>
+                    <h3 class="font-bold text-gray-900 text-lg"><%= transaction.merchant %></h3>
+                    <div class="flex items-center gap-2 text-sm text-gray-500">
+                      <span><%= new Date(transaction.date).toLocaleDateString('en-MY', { day: 'numeric', month: 'short', year: 'numeric' }) %></span>
+                      <span>•</span>
+                      <span><%= transaction.cashbackRate %>% cashback rate</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Right Side - Amount & Status -->
+                <div class="text-right">
+                  <div class="font-bold text-gray-900 text-lg mb-1">RM <%= transaction.amount.toFixed(2) %></div>
+                  <div class="flex items-center gap-2 justify-end mb-2">
+                    <span class="text-sm text-gray-500">Cashback:</span>
+                    <span class="font-bold text-green-600">+RM <%= transaction.cashbackAmount.toFixed(2) %></span>
+                  </div>
+                  <% if (transaction.status === 'approved') { %>
+                    <span class="inline-flex items-center gap-1 bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-semibold">
+                      ✓ Approved
+                    </span>
+                  <% } else if (transaction.status === 'pending') { %>
+                    <span class="inline-flex items-center gap-1 bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-xs font-semibold">
+                      ⏳ Pending
+                    </span>
+                  <% } else { %>
+                    <span class="inline-flex items-center gap-1 bg-red-100 text-red-800 px-3 py-1 rounded-full text-xs font-semibold">
+                      ✗ Rejected
+                    </span>
+                  <% } %>
+                </div>
+              </div>
+            </div>
+          <% }); %>
+        </div>
+
+        <!-- Pagination (placeholder) -->
+        <div class="mt-8 flex items-center justify-between">
+          <p class="text-sm text-gray-500">
+            Showing <%= transactions.length %> transaction<%= transactions.length !== 1 ? 's' : '' %>
+          </p>
+          <div class="flex gap-2">
+            <button class="px-4 py-2 border border-gray-300 rounded-lg text-sm font-semibold text-gray-700 hover:bg-gray-50 transition" disabled>
+              Previous
+            </button>
+            <button class="px-4 py-2 border border-gray-300 rounded-lg text-sm font-semibold text-gray-700 hover:bg-gray-50 transition" disabled>
+              Next
+            </button>
+          </div>
+        </div>
+      <% } %>
+    </div>
+
+    <!-- Earnings Timeline -->
+    <% if (transactions.length > 0) { %>
+      <div class="bg-white rounded-2xl shadow-md p-6">
+        <h2 class="text-xl font-bold text-gray-900 mb-6">Earnings Breakdown</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- By Status -->
+          <div>
+            <h3 class="text-sm font-semibold text-gray-600 uppercase mb-4">By Status</h3>
+            <div class="space-y-3">
+              <%
+                const approvedCount = transactions.filter(t => t.status === 'approved').length;
+                const pendingCount = transactions.filter(t => t.status === 'pending').length;
+                const totalCount = transactions.length;
+              %>
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                  <span class="text-sm text-gray-700">Approved</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="text-sm font-semibold text-gray-900"><%= approvedCount %> transactions</span>
+                  <span class="text-xs text-gray-500">(<%= ((approvedCount/totalCount)*100).toFixed(0) %>%)</span>
+                </div>
+              </div>
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                  <span class="text-sm text-gray-700">Pending</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="text-sm font-semibold text-gray-900"><%= pendingCount %> transactions</span>
+                  <span class="text-xs text-gray-500">(<%= ((pendingCount/totalCount)*100).toFixed(0) %>%)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Top Merchants -->
+          <div>
+            <h3 class="text-sm font-semibold text-gray-600 uppercase mb-4">Top Merchants</h3>
+            <div class="space-y-3">
+              <%
+                const merchantStats = {};
+                transactions.forEach(t => {
+                  if (!merchantStats[t.merchant]) {
+                    merchantStats[t.merchant] = { count: 0, total: 0 };
+                  }
+                  merchantStats[t.merchant].count++;
+                  merchantStats[t.merchant].total += t.cashbackAmount;
+                });
+                const topMerchants = Object.entries(merchantStats)
+                  .sort((a, b) => b[1].total - a[1].total)
+                  .slice(0, 3);
+              %>
+              <% topMerchants.forEach(([merchant, stats]) => { %>
+                <div class="flex items-center justify-between">
+                  <span class="text-sm text-gray-700"><%= merchant %></span>
+                  <div class="flex items-center gap-2">
+                    <span class="text-sm font-semibold text-green-600">RM <%= stats.total.toFixed(2) %></span>
+                    <span class="text-xs text-gray-500">(<%= stats.count %> purchase<%= stats.count !== 1 ? 's' : '' %>)</span>
+                  </div>
+                </div>
+              <% }); %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% } %>
+
+  </div>
+
+  <style>
+    .filter-btn {
+      background: transparent;
+      color: #6b7280;
+    }
+    .filter-btn:hover {
+      background: #f3f4f6;
+    }
+    .filter-btn.active {
+      background: #fbbf24;
+      color: #1a1a1a;
+    }
+  </style>
+
+  <script>
+    function filterTransactions(status) {
+      const items = document.querySelectorAll('.transaction-item');
+      const buttons = document.querySelectorAll('.filter-btn');
+      
+      // Update active button
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+      
+      // Filter transactions
+      items.forEach(item => {
+        if (status === 'all' || item.dataset.status === status) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>

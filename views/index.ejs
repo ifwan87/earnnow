@@ -28,8 +28,13 @@
         
         <!-- Auth Buttons -->
         <div class="hidden md:flex items-center gap-3">
-          <button class="text-gray-700 hover:text-earnnow-yellow px-4 py-2 rounded-lg transition">Sign In</button>
-          <button class="bg-earnnow-yellow text-earnnow-black font-semibold px-6 py-2 rounded-lg hover:bg-yellow-500 transition transform hover:scale-105">Get Started</button>
+          <% if (user) { %>
+            <a href="/dashboard" class="text-gray-700 hover:text-earnnow-yellow px-4 py-2 rounded-lg transition font-medium">Dashboard</a>
+            <a href="/logout" class="bg-earnnow-yellow text-earnnow-black font-semibold px-6 py-2 rounded-lg hover:bg-yellow-500 transition transform hover:scale-105">Sign Out</a>
+          <% } else { %>
+            <a href="/login" class="text-gray-700 hover:text-earnnow-yellow px-4 py-2 rounded-lg transition">Sign In</a>
+            <a href="/signup" class="bg-earnnow-yellow text-earnnow-black font-semibold px-6 py-2 rounded-lg hover:bg-yellow-500 transition transform hover:scale-105">Get Started</a>
+          <% } %>
         </div>
         
         <!-- Mobile Menu Button -->
@@ -65,12 +70,12 @@
               You already shop online. Now you can earn real<br/>
               money back. No points, no hassle - <span class="font-bold">just Cashback.</span>
             </p>
-            <button class="bg-earnnow-black text-white font-semibold px-8 py-4 rounded-lg hover:bg-gray-900 transition transform hover:scale-105 shadow-xl flex items-center gap-2">
+            <a href="/signup" class="bg-earnnow-black text-white font-semibold px-8 py-4 rounded-lg hover:bg-gray-900 transition transform hover:scale-105 shadow-xl flex items-center gap-2">
               Join Now to Earn
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                 <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
               </svg>
-            </button>
+            </a>
           </div>
 
           <!-- Right side - Floating cards mockup -->
@@ -131,7 +136,7 @@
       <!-- Store Cards Grid -->
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
         <!-- Shopee -->
-        <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden cursor-pointer group">
+        <a href="/merchants" class="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden cursor-pointer group">
           <div class="relative h-40 bg-white flex items-center justify-center p-6">
             <span class="absolute top-3 left-3 bg-blue-600 text-white text-xs font-semibold px-3 py-1 rounded-full z-10">Updated</span>
             <img src="/images/stores/shopeee.jpeg" alt="Shopee" class="max-w-32 max-h-20 object-contain group-hover:scale-110 transition-transform">
@@ -144,10 +149,10 @@
               <span class="ml-1">3.5% • Ends in 3 days</span>
             </div>
           </div>
-        </div>
+        </a>
 
         <!-- Expedia -->
-        <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden cursor-pointer group">
+        <a href="/merchants" class="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden cursor-pointer group">
           <div class="relative h-40 bg-white flex items-center justify-center p-8">
             <span class="absolute top-3 left-3 bg-blue-600 text-white text-xs font-semibold px-3 py-1 rounded-full z-10">Updated</span>
             <img src="/images/stores/expedia-v1.jpeg" alt="Expedia" class="max-w-24 max-h-16 object-contain group-hover:scale-110 transition-transform">
@@ -160,10 +165,10 @@
               <span class="ml-1">5% • Travel Deals</span>
             </div>
           </div>
-        </div>
+        </a>
 
         <!-- Lazada -->
-        <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden cursor-pointer group">
+        <a href="/merchants" class="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden cursor-pointer group">
           <div class="relative h-40 bg-white flex items-center justify-center p-6">
             <span class="absolute top-3 left-3 bg-blue-600 text-white text-xs font-semibold px-3 py-1 rounded-full z-10">Updated</span>
             <img src="/images/stores/Lazada.jpeg" alt="Lazada" class="max-w-32 max-h-20 object-contain group-hover:scale-110 transition-transform">
@@ -176,10 +181,10 @@
               <span class="ml-1">18.5% • Ends in 46:41</span>
             </div>
           </div>
-        </div>
+        </a>
 
         <!-- Agoda -->
-        <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden cursor-pointer group">
+        <a href="/merchants" class="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden cursor-pointer group">
           <div class="h-40 bg-white flex items-center justify-center p-6">
             <img src="/images/stores/agoda.jpeg" alt="Agoda" class="max-w-32 max-h-20 object-contain group-hover:scale-110 transition-transform">
           </div>
@@ -191,10 +196,10 @@
               <span class="ml-1">6.5%</span>
             </div>
           </div>
-        </div>
+        </a>
 
         <!-- Trip.com -->
-        <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden cursor-pointer group">
+        <a href="/merchants" class="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden cursor-pointer group">
           <div class="h-40 bg-white flex items-center justify-center p-6">
             <img src="/images/stores/Trip.com_Icon_2022.png" alt="Trip.com" class="max-w-32 max-h-20 object-contain group-hover:scale-110 transition-transform">
           </div>
@@ -206,10 +211,10 @@
               <span class="ml-1">6.5%</span>
             </div>
           </div>
-        </div>
+        </a>
 
         <!-- Foodpanda -->
-        <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden cursor-pointer group">
+        <a href="/merchants" class="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden cursor-pointer group">
           <div class="relative h-40 bg-white flex items-center justify-center p-6">
             <span class="absolute top-3 left-3 bg-blue-600 text-white text-xs font-semibold px-3 py-1 rounded-full z-10">Updated</span>
             <img src="/images/stores/Foodpanda.jpeg" alt="Foodpanda" class="max-w-32 max-h-20 object-contain group-hover:scale-110 transition-transform">
@@ -218,10 +223,10 @@
             <p class="text-sm text-gray-600 mb-1">foodpanda</p>
             <h3 class="font-bold text-gray-900 mb-1">Up to RM6 Cashback</h3>
           </div>
-        </div>
+        </a>
 
         <!-- Booking.com -->
-        <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden cursor-pointer group">
+        <a href="/merchants" class="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden cursor-pointer group">
           <div class="relative h-40 bg-white flex items-center justify-center p-6">
             <span class="absolute top-3 left-3 bg-blue-600 text-white text-xs font-semibold px-3 py-1 rounded-full z-10">Updated</span>
             <img src="/images/stores/booking.png" alt="Booking.com" class="max-w-32 max-h-20 object-contain group-hover:scale-110 transition-transform">
@@ -230,10 +235,10 @@
             <p class="text-sm text-gray-600 mb-1">Booking.com</p>
             <h3 class="font-bold text-gray-900 mb-1">9% Cashback</h3>
           </div>
-        </div>
+        </a>
 
         <!-- Klook -->
-        <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden cursor-pointer group">
+        <a href="/merchants" class="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden cursor-pointer group">
           <div class="relative h-40 bg-white flex items-center justify-center p-6">
             <span class="absolute top-3 left-3 bg-blue-600 text-white text-xs font-semibold px-3 py-1 rounded-full z-10">Updated</span>
             <img src="/images/stores/klook.png" alt="Klook" class="max-w-32 max-h-20 object-contain group-hover:scale-110 transition-transform">
@@ -242,10 +247,10 @@
             <p class="text-sm text-gray-600 mb-1">Klook</p>
             <h3 class="font-bold text-gray-900 mb-1">Up to 25% Cashback</h3>
           </div>
-        </div>
+        </a>
 
         <!-- SHEIN -->
-        <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden cursor-pointer group">
+        <a href="/merchants" class="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden cursor-pointer group">
           <div class="h-40 bg-white flex items-center justify-center p-6">
             <img src="/images/stores/shein.png" alt="SHEIN" class="max-w-32 max-h-20 object-contain group-hover:scale-110 transition-transform">
           </div>
@@ -253,10 +258,10 @@
             <p class="text-sm text-gray-600 mb-1">SHEIN</p>
             <h3 class="font-bold text-gray-900 mb-1">Up to 7.5% Cashback</h3>
           </div>
-        </div>
+        </a>
 
         <!-- AirAsia -->
-        <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden cursor-pointer group">
+        <a href="/merchants" class="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden cursor-pointer group">
           <div class="h-40 bg-white flex items-center justify-center p-6">
             <img src="/images/stores/AirAsia_Logo.svg.png" alt="AirAsia" class="max-w-32 max-h-20 object-contain group-hover:scale-110 transition-transform">
           </div>
@@ -268,10 +273,10 @@
               <span class="ml-1">2.5%</span>
             </div>
           </div>
-        </div>
+        </a>
 
         <!-- Malaysia Airlines -->
-        <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden cursor-pointer group">
+        <a href="/merchants" class="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden cursor-pointer group">
           <div class="h-40 bg-white flex items-center justify-center p-6">
             <img src="/images/stores/malaysia airlinw.png" alt="Malaysia Airlines" class="max-w-32 max-h-20 object-contain group-hover:scale-110 transition-transform">
           </div>
@@ -279,10 +284,10 @@
             <p class="text-sm text-gray-600 mb-1">Malaysia Airlines</p>
             <h3 class="font-bold text-gray-900 mb-1">Up to 2% Cashback</h3>
           </div>
-        </div>
+        </a>
 
         <!-- Watsons -->
-        <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden cursor-pointer group">
+        <a href="/merchants" class="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden cursor-pointer group">
           <div class="h-40 bg-white flex items-center justify-center p-6">
             <img src="/images/stores/logo_watsons_mobile.avif" alt="Watsons" class="max-w-32 max-h-20 object-contain group-hover:scale-110 transition-transform">
           </div>
@@ -294,10 +299,10 @@
               <span class="ml-1">4.5%</span>
             </div>
           </div>
-        </div>
+        </a>
 
         <!-- Adidas -->
-        <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden cursor-pointer group">
+        <a href="/merchants" class="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden cursor-pointer group">
           <div class="h-40 bg-white flex items-center justify-center p-6">
             <img src="/images/stores/adidas-white-logo-hd-png-701751694777208ogwssxbgpj.png" alt="Adidas" class="max-w-32 max-h-20 object-contain group-hover:scale-110 transition-transform">
           </div>
@@ -309,10 +314,10 @@
               <span class="ml-1">8% • Limited Time</span>
             </div>
           </div>
-        </div>
+        </a>
 
         <!-- Uniqlo -->
-        <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden cursor-pointer group">
+        <a href="/merchants" class="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden cursor-pointer group">
           <div class="h-40 bg-white flex items-center justify-center p-8">
             <img src="/images/stores/uniqlo-v1.jpeg" alt="Uniqlo" class="max-w-24 max-h-16 object-contain group-hover:scale-110 transition-transform">
           </div>
@@ -320,10 +325,10 @@
             <p class="text-sm text-gray-600 mb-1">Uniqlo</p>
             <h3 class="font-bold text-gray-900 mb-1">Up to 5% Cashback</h3>
           </div>
-        </div>
+        </a>
 
         <!-- Zalora -->
-        <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden cursor-pointer group">
+        <a href="/merchants" class="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden cursor-pointer group">
           <div class="relative h-40 bg-white flex items-center justify-center p-6">
             <span class="absolute top-3 left-3 bg-blue-600 text-white text-xs font-semibold px-3 py-1 rounded-full z-10">Updated</span>
             <img src="/images/stores/Zalora_sg.jpg" alt="Zalora" class="max-w-32 max-h-20 object-contain group-hover:scale-110 transition-transform">
@@ -336,101 +341,131 @@
               <span class="ml-1">10% • Fashion Week</span>
             </div>
           </div>
-        </div>
+        </a>
       </div>
 
       <!-- View More Button -->
       <div class="text-center mt-10">
-        <button class="border-2 border-gray-300 hover:border-earnnow-yellow text-gray-900 font-semibold px-8 py-3 rounded-full transition-all duration-300 inline-flex items-center gap-2">
+        <a href="/merchants" class="border-2 border-gray-300 hover:border-earnnow-yellow text-gray-900 font-semibold px-8 py-3 rounded-full transition-all duration-300 inline-flex items-center gap-2">
           View All Stores
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
           </svg>
-        </button>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- How It Works Section - ShopBack Style with Animations -->
-  <section class="py-20 px-4 bg-earnnow-black overflow-hidden smooth-scroll">
+  <!-- How It Works Section - ShopBack Style with 2 Column Layout -->
+  <section class="py-20 px-4 overflow-hidden smooth-scroll" style="background: linear-gradient(to bottom right, #DB5949, #E67E73, #F0A89D);">
     <div class="max-w-7xl mx-auto">
-      <div class="text-center mb-16 animate-fade-in-up">
-        <h2 class="text-4xl md:text-5xl font-bold mb-4">
-          Simple as <span class="text-earnnow-yellow animate-glow">1-2-3</span>
-        </h2>
-        <p class="text-lg text-gray-400">Start earning in under 60 seconds</p>
-      </div>
-      <div class="grid md:grid-cols-3 gap-8">
-        <!-- Step 1 -->
-        <div class="group bg-earnnow-gray border border-gray-800 rounded-2xl p-8 text-center hover:border-earnnow-yellow hover:shadow-2xl hover:shadow-earnnow-yellow/20 transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 animate-slide-up perspective-1000 hover-tilt cursor-pointer" style="animation-delay: 0.1s;">
-          <div class="w-16 h-16 bg-earnnow-yellow/20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-earnnow-yellow/30 group-hover:scale-110 transition-all duration-300 group-hover:rotate-12 shadow-glow-yellow">
-            <span class="text-3xl font-bold text-earnnow-yellow group-hover:scale-125 transition-transform duration-300">1</span>
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <!-- Left side - Image -->
+        <div class="relative animate-fade-in-up">
+          <div class="relative z-10 animate-float">
+            <img src="/images/stores/earnnow_no_bg.png" alt="EarnNow App" class="w-full max-w-md mx-auto drop-shadow-2xl">
           </div>
-          <h3 class="text-2xl font-bold mb-4 text-white group-hover:text-earnnow-yellow transition-colors duration-300">Sign Up</h3>
-          <p class="text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors duration-300">Quick email or Google sign-up. No wallet, no crypto steps. Takes 10 seconds.</p>
+          <!-- Decorative elements -->
+          <div class="absolute -top-10 -left-10 w-32 h-32 bg-yellow-400/30 rounded-full blur-3xl animate-pulse"></div>
+          <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-orange-400/20 rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
         </div>
-        
-        <!-- Step 2 -->
-        <div class="group bg-earnnow-gray border border-gray-800 rounded-2xl p-8 text-center hover:border-earnnow-yellow hover:shadow-2xl hover:shadow-earnnow-yellow/20 transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 animate-slide-up perspective-1000 hover-tilt cursor-pointer" style="animation-delay: 0.2s;">
-          <div class="w-16 h-16 bg-earnnow-yellow/20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-earnnow-yellow/30 group-hover:scale-110 transition-all duration-300 group-hover:rotate-12 shadow-glow-yellow">
-            <span class="text-3xl font-bold text-earnnow-yellow group-hover:scale-125 transition-transform duration-300">2</span>
+
+        <!-- Right side - Steps -->
+        <div class="space-y-8">
+          <div class="text-left mb-12 animate-fade-in-up">
+            <h2 class="text-4xl md:text-5xl font-black mb-4 text-white">
+              Simple as <span class="text-yellow-300 animate-glow">1-2-3</span>
+            </h2>
+            <p class="text-lg text-white/90 font-medium">Start earning in under 60 seconds</p>
           </div>
-          <h3 class="text-2xl font-bold mb-4 text-white group-hover:text-earnnow-yellow transition-colors duration-300">Shop</h3>
-          <p class="text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors duration-300">Click your favorite store, shop like normal. We track it automatically.</p>
-        </div>
-        
-        <!-- Step 3 -->
-        <div class="group bg-earnnow-gray border border-gray-800 rounded-2xl p-8 text-center hover:border-earnnow-yellow hover:shadow-2xl hover:shadow-earnnow-yellow/20 transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 animate-slide-up perspective-1000 hover-tilt cursor-pointer" style="animation-delay: 0.3s;">
-          <div class="w-16 h-16 bg-earnnow-yellow/20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-earnnow-yellow/30 group-hover:scale-110 transition-all duration-300 group-hover:rotate-12 shadow-glow-yellow">
-            <span class="text-3xl font-bold text-earnnow-yellow group-hover:scale-125 transition-transform duration-300">3</span>
+
+          <!-- Step 1 -->
+          <div class="group flex gap-6 items-start animate-slide-up cursor-pointer transform hover:translate-x-2 transition-all duration-300" style="animation-delay: 0.1s;">
+            <div class="flex-shrink-0 w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center group-hover:bg-yellow-300 group-hover:scale-110 transition-all duration-300 shadow-lg">
+              <span class="text-3xl font-black text-white group-hover:text-coral-red transition-colors duration-300">1</span>
+            </div>
+            <div class="flex-1">
+              <h3 class="text-2xl font-bold mb-2 text-white group-hover:text-yellow-300 transition-colors duration-300">Sign Up</h3>
+              <p class="text-white/80 leading-relaxed group-hover:text-white transition-colors duration-300">Quick email or Google sign-up. No wallet, no crypto steps. Takes 10 seconds.</p>
+            </div>
           </div>
-          <h3 class="text-2xl font-bold mb-4 text-white group-hover:text-earnnow-yellow transition-colors duration-300">Earn</h3>
-          <p class="text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors duration-300">See cashback appear as "Pending" within 24h. Get approved after refund window.</p>
+
+          <!-- Step 2 -->
+          <div class="group flex gap-6 items-start animate-slide-up cursor-pointer transform hover:translate-x-2 transition-all duration-300" style="animation-delay: 0.2s;">
+            <div class="flex-shrink-0 w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center group-hover:bg-yellow-300 group-hover:scale-110 transition-all duration-300 shadow-lg">
+              <span class="text-3xl font-black text-white group-hover:text-coral-red transition-colors duration-300">2</span>
+            </div>
+            <div class="flex-1">
+              <h3 class="text-2xl font-bold mb-2 text-white group-hover:text-yellow-300 transition-colors duration-300">Shop</h3>
+              <p class="text-white/80 leading-relaxed group-hover:text-white transition-colors duration-300">Click your favorite store, shop like normal. We track it automatically.</p>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="group flex gap-6 items-start animate-slide-up cursor-pointer transform hover:translate-x-2 transition-all duration-300" style="animation-delay: 0.3s;">
+            <div class="flex-shrink-0 w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center group-hover:bg-yellow-300 group-hover:scale-110 transition-all duration-300 shadow-lg">
+              <span class="text-3xl font-black text-white group-hover:text-coral-red transition-colors duration-300">3</span>
+            </div>
+            <div class="flex-1">
+              <h3 class="text-2xl font-bold mb-2 text-white group-hover:text-yellow-300 transition-colors duration-300">Earn</h3>
+              <p class="text-white/80 leading-relaxed group-hover:text-white transition-colors duration-300">See cashback appear as "Pending" within 24h. Get approved after refund window.</p>
+            </div>
+          </div>
+
+          <!-- CTA Button -->
+          <div class="pt-4 animate-fade-in-up" style="animation-delay: 0.4s;">
+            <a href="/signup" class="bg-white text-coral-red font-bold px-8 py-4 rounded-full hover:bg-yellow-300 hover:text-coral-red transition-all duration-300 transform hover:scale-105 shadow-2xl inline-flex items-center gap-2">
+              Get Started Now
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+              </svg>
+            </a>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Featured Merchants Section - ShopBack Style with Animations -->
-  <section class="py-20 px-4 bg-earnnow-black smooth-scroll">
+  <!-- Featured Merchants Section - Light Background -->
+  <section class="py-20 px-4 bg-white smooth-scroll">
     <div class="max-w-7xl mx-auto">
       <div class="text-center mb-16 animate-fade-in-up">
-        <h2 class="text-4xl md:text-5xl font-bold mb-4">
+        <h2 class="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
           Shop at Your <span class="text-earnnow-yellow animate-glow">Favorite Stores</span>
         </h2>
-        <p class="text-lg text-gray-400">Earn cashback from 150+ trusted merchants</p>
+        <p class="text-lg text-gray-600">Earn cashback from 150+ trusted merchants</p>
       </div>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
         <!-- Shopee Card -->
-        <div class="group bg-earnnow-gray border border-gray-800 rounded-2xl p-6 text-center hover:border-earnnow-yellow transition-all duration-300 cursor-pointer transform hover:-translate-y-3 hover:shadow-2xl hover:shadow-earnnow-yellow/20 animate-slide-up perspective-1000 hover-tilt" style="animation-delay: 0.1s;">
+        <div class="group bg-white border-2 border-gray-200 rounded-2xl p-6 text-center hover:border-earnnow-yellow transition-all duration-300 cursor-pointer transform hover:-translate-y-3 hover:shadow-2xl hover:shadow-earnnow-yellow/20 animate-slide-up perspective-1000 hover-tilt" style="animation-delay: 0.1s;">
           <div class="text-5xl mb-4 group-hover:scale-125 group-hover:rotate-6 transition-all duration-300 transform animate-float">🛍️</div>
-          <h4 class="font-semibold mb-2 text-white text-lg group-hover:text-earnnow-yellow transition-colors duration-300">Shopee</h4>
+          <h4 class="font-semibold mb-2 text-gray-900 text-lg group-hover:text-earnnow-yellow transition-colors duration-300">Shopee</h4>
           <p class="text-earnnow-yellow text-sm font-semibold group-hover:scale-110 transition-transform duration-300 inline-block">Up to 5% cashback</p>
         </div>
         
         <!-- Lazada Card -->
-        <div class="group bg-earnnow-gray border border-gray-800 rounded-2xl p-6 text-center hover:border-earnnow-yellow transition-all duration-300 cursor-pointer transform hover:-translate-y-3 hover:shadow-2xl hover:shadow-earnnow-yellow/20 animate-slide-up perspective-1000 hover-tilt" style="animation-delay: 0.2s;">
+        <div class="group bg-white border-2 border-gray-200 rounded-2xl p-6 text-center hover:border-earnnow-yellow transition-all duration-300 cursor-pointer transform hover:-translate-y-3 hover:shadow-2xl hover:shadow-earnnow-yellow/20 animate-slide-up perspective-1000 hover-tilt" style="animation-delay: 0.2s;">
           <div class="text-5xl mb-4 group-hover:scale-125 group-hover:rotate-6 transition-all duration-300 transform animate-float" style="animation-delay: 0.5s;">🛒</div>
-          <h4 class="font-semibold mb-2 text-white text-lg group-hover:text-earnnow-yellow transition-colors duration-300">Lazada</h4>
+          <h4 class="font-semibold mb-2 text-gray-900 text-lg group-hover:text-earnnow-yellow transition-colors duration-300">Lazada</h4>
           <p class="text-earnnow-yellow text-sm font-semibold group-hover:scale-110 transition-transform duration-300 inline-block">Up to 4.5% cashback</p>
         </div>
         
         <!-- Agoda Card -->
-        <div class="group bg-earnnow-gray border border-gray-800 rounded-2xl p-6 text-center hover:border-earnnow-yellow transition-all duration-300 cursor-pointer transform hover:-translate-y-3 hover:shadow-2xl hover:shadow-earnnow-yellow/20 animate-slide-up perspective-1000 hover-tilt" style="animation-delay: 0.3s;">
+        <div class="group bg-white border-2 border-gray-200 rounded-2xl p-6 text-center hover:border-earnnow-yellow transition-all duration-300 cursor-pointer transform hover:-translate-y-3 hover:shadow-2xl hover:shadow-earnnow-yellow/20 animate-slide-up perspective-1000 hover-tilt" style="animation-delay: 0.3s;">
           <div class="text-5xl mb-4 group-hover:scale-125 group-hover:rotate-6 transition-all duration-300 transform animate-float" style="animation-delay: 1s;">✈️</div>
-          <h4 class="font-semibold mb-2 text-white text-lg group-hover:text-earnnow-yellow transition-colors duration-300">Agoda</h4>
+          <h4 class="font-semibold mb-2 text-gray-900 text-lg group-hover:text-earnnow-yellow transition-colors duration-300">Agoda</h4>
           <p class="text-earnnow-yellow text-sm font-semibold group-hover:scale-110 transition-transform duration-300 inline-block">Up to 6% cashback</p>
         </div>
         
         <!-- Booking.com Card -->
-        <div class="group bg-earnnow-gray border border-gray-800 rounded-2xl p-6 text-center hover:border-earnnow-yellow transition-all duration-300 cursor-pointer transform hover:-translate-y-3 hover:shadow-2xl hover:shadow-earnnow-yellow/20 animate-slide-up perspective-1000 hover-tilt" style="animation-delay: 0.4s;">
+        <div class="group bg-white border-2 border-gray-200 rounded-2xl p-6 text-center hover:border-earnnow-yellow transition-all duration-300 cursor-pointer transform hover:-translate-y-3 hover:shadow-2xl hover:shadow-earnnow-yellow/20 animate-slide-up perspective-1000 hover-tilt" style="animation-delay: 0.4s;">
           <div class="text-5xl mb-4 group-hover:scale-125 group-hover:rotate-6 transition-all duration-300 transform animate-float" style="animation-delay: 1.5s;">🏨</div>
-          <h4 class="font-semibold mb-2 text-white text-lg group-hover:text-earnnow-yellow transition-colors duration-300">Booking.com</h4>
+          <h4 class="font-semibold mb-2 text-gray-900 text-lg group-hover:text-earnnow-yellow transition-colors duration-300">Booking.com</h4>
           <p class="text-earnnow-yellow text-sm font-semibold group-hover:scale-110 transition-transform duration-300 inline-block">Up to 5.5% cashback</p>
         </div>
       </div>
       <div class="text-center mt-10 animate-fade-in-up" style="animation-delay: 0.5s;">
-        <button class="border-2 border-earnnow-yellow text-earnnow-yellow font-semibold px-8 py-3 rounded-full hover:bg-earnnow-yellow hover:text-earnnow-black transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-earnnow-yellow/50 transition-bounce">
+        <button class="border-2 border-earnnow-yellow text-earnnow-yellow font-semibold px-8 py-3 rounded-full hover:bg-earnnow-yellow hover:text-white transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-earnnow-yellow/50 transition-bounce">
           View All Merchants
         </button>
       </div>
@@ -438,94 +473,132 @@
   </section>
 
   <!-- Tiers Section -->
-  <section class="py-20 px-4 bg-earnnow-gray/30">
+  <section class="py-20 px-4 bg-gray-50">
     <div class="max-w-7xl mx-auto">
       <div class="text-center mb-16">
-        <h2 class="section-title">Grow Your <span class="gradient-text">Rewards</span></h2>
-        <p class="text-xl text-gray-400">Higher tiers unlock better cashback rates</p>
+        <h2 class="text-4xl md:text-5xl font-bold mb-4 text-gray-900">Grow Your <span class="text-earnnow-yellow">Rewards</span></h2>
+        <p class="text-xl text-gray-600">Higher tiers unlock better cashback rates</p>
       </div>
       <div class="grid md:grid-cols-3 gap-8">
-        <div class="card border-2 border-gray-700">
-          <div class="text-center mb-4">
-            <div class="text-4xl mb-2">⭐</div>
-            <h3 class="text-2xl font-bold">Starter</h3>
+        <!-- Starter Tier -->
+        <div class="bg-white border-2 border-gray-300 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
+          <div class="text-center mb-6">
+            <div class="text-5xl mb-3">⭐</div>
+            <h3 class="text-2xl font-bold text-gray-900">Starter</h3>
           </div>
-          <div class="space-y-3 mb-6">
+          <div class="space-y-3 mb-6 pb-6 border-b border-gray-200">
             <div class="flex items-center justify-between">
-              <span class="text-gray-400">Cashback Rate</span>
-              <span class="font-semibold">1.0x</span>
+              <span class="text-gray-600">Cashback Rate</span>
+              <span class="font-bold text-gray-900">1.0x</span>
             </div>
             <div class="flex items-center justify-between">
-              <span class="text-gray-400">Required Earnings</span>
-              <span class="font-semibold">RM 0</span>
+              <span class="text-gray-600">Required Earnings</span>
+              <span class="font-bold text-gray-900">RM 0</span>
             </div>
           </div>
-          <ul class="space-y-2 text-sm text-gray-400">
-            <li>✓ Base cashback rewards</li>
-            <li>✓ Referral program access</li>
-            <li>✓ Clear pending/approved tracking</li>
+          <ul class="space-y-3 text-sm text-gray-700">
+            <li class="flex items-start gap-2">
+              <span class="text-green-500 mt-0.5">✓</span>
+              <span>Base cashback rewards</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-green-500 mt-0.5">✓</span>
+              <span>Referral program access</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-green-500 mt-0.5">✓</span>
+              <span>Clear pending/approved tracking</span>
+            </li>
           </ul>
         </div>
-        <div class="card border-2 border-earnnow-yellow transform md:scale-105">
-          <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-earnnow-yellow text-earnnow-black px-4 py-1 rounded-full text-sm font-semibold">
+        
+        <!-- Silver Tier (Popular) -->
+        <div class="bg-white border-2 border-earnnow-yellow rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 transform md:scale-105 relative">
+          <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-earnnow-yellow text-white px-6 py-2 rounded-full text-sm font-bold shadow-lg">
             Popular
           </div>
-          <div class="text-center mb-4">
-            <div class="text-4xl mb-2">💎</div>
+          <div class="text-center mb-6">
+            <div class="text-5xl mb-3">💎</div>
             <h3 class="text-2xl font-bold text-earnnow-yellow">Silver</h3>
           </div>
-          <div class="space-y-3 mb-6">
+          <div class="space-y-3 mb-6 pb-6 border-b border-gray-200">
             <div class="flex items-center justify-between">
-              <span class="text-gray-400">Cashback Rate</span>
-              <span class="font-semibold text-earnnow-yellow">1.1x</span>
+              <span class="text-gray-600">Cashback Rate</span>
+              <span class="font-bold text-earnnow-yellow text-lg">1.1x</span>
             </div>
             <div class="flex items-center justify-between">
-              <span class="text-gray-400">Required Earnings</span>
-              <span class="font-semibold">RM 200</span>
+              <span class="text-gray-600">Required Earnings</span>
+              <span class="font-bold text-gray-900">RM 200</span>
             </div>
           </div>
-          <ul class="space-y-2 text-sm text-gray-400">
-            <li>✓ Everything in Starter</li>
-            <li>✓ <span class="text-earnnow-yellow">+10% cashback boost</span></li>
-            <li>✓ Priority support</li>
-            <li>✓ Early access to quests</li>
+          <ul class="space-y-3 text-sm text-gray-700">
+            <li class="flex items-start gap-2">
+              <span class="text-green-500 mt-0.5">✓</span>
+              <span>Everything in Starter</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-earnnow-yellow mt-0.5">✓</span>
+              <span><span class="font-semibold text-earnnow-yellow">+10% cashback boost</span></span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-green-500 mt-0.5">✓</span>
+              <span>Priority support</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-green-500 mt-0.5">✓</span>
+              <span>Early access to quests</span>
+            </li>
           </ul>
         </div>
-        <div class="card border-2 border-yellow-600">
-          <div class="text-center mb-4">
-            <div class="text-4xl mb-2">👑</div>
+        
+        <!-- Gold Tier -->
+        <div class="bg-gradient-to-br from-yellow-50 to-orange-50 border-2 border-yellow-500 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
+          <div class="text-center mb-6">
+            <div class="text-5xl mb-3">👑</div>
             <h3 class="text-2xl font-bold text-yellow-600">Gold</h3>
           </div>
-          <div class="space-y-3 mb-6">
+          <div class="space-y-3 mb-6 pb-6 border-b border-yellow-200">
             <div class="flex items-center justify-between">
-              <span class="text-gray-400">Cashback Rate</span>
-              <span class="font-semibold text-yellow-600">1.2x</span>
+              <span class="text-gray-700">Cashback Rate</span>
+              <span class="font-bold text-yellow-600 text-lg">1.2x</span>
             </div>
             <div class="flex items-center justify-between">
-              <span class="text-gray-400">Required Earnings</span>
-              <span class="font-semibold">RM 1,000</span>
+              <span class="text-gray-700">Required Earnings</span>
+              <span class="font-bold text-gray-900">RM 1,000</span>
             </div>
           </div>
-          <ul class="space-y-2 text-sm text-gray-400">
-            <li>✓ Everything in Silver</li>
-            <li>✓ <span class="text-yellow-600">+20% cashback boost</span></li>
-            <li>✓ Exclusive NFT boosts (future)</li>
-            <li>✓ Staking rewards (future)</li>
+          <ul class="space-y-3 text-sm text-gray-700">
+            <li class="flex items-start gap-2">
+              <span class="text-green-500 mt-0.5">✓</span>
+              <span>Everything in Silver</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-yellow-600 mt-0.5">✓</span>
+              <span><span class="font-semibold text-yellow-600">+20% cashback boost</span></span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-green-500 mt-0.5">✓</span>
+              <span>Exclusive NFT boosts (future)</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-green-500 mt-0.5">✓</span>
+              <span>Staking rewards (future)</span>
+            </li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Web3 Optional Section -->
-  <section class="py-20 px-4 bg-earnnow-black">
+  <!-- Web3 Optional Section - White Background -->
+  <section class="py-20 px-4 bg-white">
     <div class="max-w-7xl mx-auto">
       <div class="grid md:grid-cols-2 gap-12 items-center">
         <div>
-          <h2 class="text-5xl md:text-6xl font-black mb-6 text-white drop-shadow-[0_0_30px_rgba(255,193,7,0.5)]" style="text-shadow: 0 0 20px rgba(255,193,7,0.3), 0 4px 8px rgba(0,0,0,0.8);">
+          <h2 class="text-5xl md:text-6xl font-black mb-6 text-gray-900">
             Crypto? <span class="text-earnnow-yellow">Only When You Want</span>
           </h2>
-          <p class="text-xl text-gray-300 mb-6 font-medium">
+          <p class="text-xl text-gray-700 mb-6 font-medium">
             Start with familiar cashback. No wallet needed. When you're curious, 
             unlock optional Web3 bonuses on Base Chain.
           </p>
@@ -533,40 +606,40 @@
             <li class="flex items-start gap-3">
               <span class="text-earnnow-yellow text-2xl">✓</span>
               <div>
-                <h4 class="font-semibold mb-1">Stable Value Option</h4>
-                <p class="text-gray-400 text-sm">Choose USDC for stable rewards without volatility worry</p>
+                <h4 class="font-semibold mb-1 text-gray-900">Stable Value Option</h4>
+                <p class="text-gray-600 text-sm">Choose USDC for stable rewards without volatility worry</p>
               </div>
             </li>
             <li class="flex items-start gap-3">
               <span class="text-earnnow-yellow text-2xl">✓</span>
               <div>
-                <h4 class="font-semibold mb-1">Low Fees on Base</h4>
-                <p class="text-gray-400 text-sm">Fast, affordable transactions when you're ready to explore</p>
+                <h4 class="font-semibold mb-1 text-gray-900">Low Fees on Base</h4>
+                <p class="text-gray-600 text-sm">Fast, affordable transactions when you're ready to explore</p>
               </div>
             </li>
             <li class="flex items-start gap-3">
               <span class="text-earnnow-yellow text-2xl">✓</span>
               <div>
-                <h4 class="font-semibold mb-1">Future NFT & Staking</h4>
-                <p class="text-gray-400 text-sm">Extra bonuses coming for advanced users</p>
+                <h4 class="font-semibold mb-1 text-gray-900">Future NFT & Staking</h4>
+                <p class="text-gray-600 text-sm">Extra bonuses coming for advanced users</p>
               </div>
             </li>
           </ul>
         </div>
-        <div class="card">
-          <h3 class="text-2xl font-bold mb-4 text-center">Your Journey, Your Pace</h3>
+        <div class="bg-white border-2 border-gray-200 rounded-2xl p-8 shadow-lg">
+          <h3 class="text-2xl font-bold mb-4 text-center text-gray-900">Your Journey, Your Pace</h3>
           <div class="space-y-4">
-            <div class="bg-earnnow-black/50 p-4 rounded-lg border-l-4 border-gray-600">
+            <div class="bg-gray-50 p-4 rounded-lg border-l-4 border-gray-400">
               <div class="text-sm text-gray-500 mb-1">Step 1</div>
-              <div class="font-semibold">Sign up & shop (Web2 mode)</div>
+              <div class="font-semibold text-gray-900">Sign up & shop (Web2 mode)</div>
             </div>
-            <div class="bg-earnnow-black/50 p-4 rounded-lg border-l-4 border-earnnow-yellow/50">
+            <div class="bg-yellow-50 p-4 rounded-lg border-l-4 border-earnnow-yellow/50">
               <div class="text-sm text-gray-500 mb-1">Step 2 (Optional)</div>
-              <div class="font-semibold">Connect wallet for bonuses</div>
+              <div class="font-semibold text-gray-900">Connect wallet for bonuses</div>
             </div>
-            <div class="bg-earnnow-black/50 p-4 rounded-lg border-l-4 border-earnnow-yellow">
+            <div class="bg-yellow-100 p-4 rounded-lg border-l-4 border-earnnow-yellow">
               <div class="text-sm text-gray-500 mb-1">Step 3 (Optional)</div>
-              <div class="font-semibold">Explore NFTs, staking, token rewards</div>
+              <div class="font-semibold text-gray-900">Explore NFTs, staking, token rewards</div>
             </div>
           </div>
         </div>

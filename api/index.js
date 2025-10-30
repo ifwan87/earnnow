@@ -21,4 +21,4 @@ app.get('/how-it-works', (req, res) => res.render('how-it-works', { title: 'How 
 app.get('/rewards', (req, res) => res.render('rewards', { title: 'Your Rewards - EarnNow', user: null }));
 app.get('/tiers', (req, res) => res.render('tiers', { title: 'Membership Tiers - EarnNow', user: null }));
 
-module.exports = app;
+module.exports = (req, res) => app(req, res);
